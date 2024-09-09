@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.bobvarioa.mobitems.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "mobitems.refmap.json",
+  "mixins": [
+    "EntityMixin",
+    "SoundEngineMixin",
+    "SoundManagerMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

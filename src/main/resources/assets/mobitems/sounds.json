@@ -1,0 +1,20 @@
+{
+  "vacuum_start": {
+    "subtitle": "sounds.mobitems.vacuum_start",
+    "sounds": [
+      { "name": "mobitems:vacuum_start", "preload": true }
+    ]
+  },
+  "vacuum_loop": {
+    "subtitle": "sounds.mobitems.vacuum_loop",
+    "sounds": [
+      { "name": "mobitems:vacuum_loop", "preload":  true }
+    ]
+  },
+  "vacuum_end": {
+    "subtitle": "sounds.mobitems.vacuum_end",
+    "sounds": [
+      { "name": "mobitems:vacuum_end", "preload":  true }
+    ]
+  }
+}

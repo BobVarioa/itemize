@@ -1,0 +1,18 @@
+{
+  "block.mobitems.converter": "ITEMizer™ (Full)",
+  "block.mobitems.converter_casing": "ITEMizer™ (Empty)",
+  "block.mobitems.spawn_capturer": "ITEMizer™ (Omniscient)",
+  "block.mobitems.soul_extractor": "ITEM™ Soul Extractor",
+  "block.mobitems.soul_inserter": "ITEM™ Soul Inserter",
+  "item.mobitems.mob_soul": "Mob Soul",
+  "item.mobitems.dusty_mob_soul": "Dusty Mob Soul",
+  "item.mobitems.worm_food": "Worm Food",
+  "item.mobitems.creative_ritual_tablet": "Ritual Tablet (Creative)",
+  "item.mobitems.pocket_converter": "Ritual Tablet ",
+  "item.mobitems.vacuum": "Vacuum",
+  "attribute.name.generic.health": "Health",
+  "itemGroup.mobitems": "ITEM Corp Products",
+  "sounds.mobitems.vacuum_start": "Vacuum starts",
+  "sounds.mobitems.vacuum_loop": "Vacuuming",
+  "sounds.mobitems.vacuum_end": "Vacuum stops"
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "empty=true": {
+      "model": "mobitems:block/converter_casing"
+    },
+    "empty=false": {
+      "model": "mobitems:block/converter"
+    }
+  }
+}
