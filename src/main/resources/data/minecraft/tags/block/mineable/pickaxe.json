@@ -1,10 +1,12 @@
 {
-  "replace": false,
-  "values": [
-    "mobitems:soul_inserter",
-    "mobitems:soul_extractor",
-    "mobitems:converter",
-    "mobitems:converter_casing",
-    "mobitems:spawn_capturer"
-  ]
+	"replace": false,
+	"values": [
+		"mobitems:soul_inserter",
+		"mobitems:soul_extractor",
+		"mobitems:converter",
+		"mobitems:converter_casing",
+		"mobitems:spawn_capturer",
+		"mobitems:mob_colosseum",
+		"mobitems:mob_modifier"
+	]
 }

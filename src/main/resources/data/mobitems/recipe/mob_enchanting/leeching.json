@@ -1,0 +1,7 @@
+{
+	"type": "mobitems:mob_enchanting",
+	"catalyst": {
+		"item": "minecraft:redstone_block"
+	},
+	"enchantment": "mobitems:leeching"
+}

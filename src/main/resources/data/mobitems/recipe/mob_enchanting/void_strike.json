@@ -1,0 +1,7 @@
+{
+	"type": "mobitems:mob_enchanting",
+	"catalyst": {
+		"item": "minecraft:chorus_fruit"
+	},
+	"enchantment": "mobitems:void_strike"
+}

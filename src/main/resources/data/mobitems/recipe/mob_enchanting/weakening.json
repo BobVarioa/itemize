@@ -1,0 +1,7 @@
+{
+	"type": "mobitems:mob_enchanting",
+	"catalyst": {
+		"item": "minecraft:fermented_spider_eye"
+	},
+	"enchantment": "mobitems:weakening"
+}

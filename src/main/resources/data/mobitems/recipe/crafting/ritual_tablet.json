@@ -1,0 +1,23 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"key": {
+		"M": {
+			"item": "mobitems:mob_soul"
+		},
+		"S": {
+			"item": "minecraft:smooth_stone"
+		},
+		"R": {
+			"item": "minecraft:redstone"
+		}
+	},
+	"pattern": [
+		"MRM",
+		"MSM",
+		"MMM"
+	],
+	"result": {
+		"count": 1,
+		"id": "mobitems:ritual_tablet"
+	}
+}

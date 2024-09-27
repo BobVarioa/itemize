@@ -1,10 +1,10 @@
 package com.bobvarioa.mobitems.blocks;
 
+import com.bobvarioa.mobitems.blocks.entities.ConverterEntity;
 import com.bobvarioa.mobitems.register.ModBlocks;
 import com.bobvarioa.mobitems.register.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -23,6 +23,7 @@ public class ConverterCasing extends Block {
 
     public ConverterCasing(Properties props) {
         super(props);
+		this.registerDefaultState(this.getStateDefinition().any().setValue(EMPTY, true));
     }
 
     @Override

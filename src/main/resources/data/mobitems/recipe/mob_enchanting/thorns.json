@@ -1,0 +1,7 @@
+{
+	"type": "mobitems:mob_enchanting",
+	"catalyst": {
+		"item": "minecraft:prismarine_shard"
+	},
+	"enchantment": "mobitems:thorns"
+}

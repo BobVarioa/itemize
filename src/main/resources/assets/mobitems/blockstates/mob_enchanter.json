@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=east": {
+			"model": "mobitems:block/mob_enchanter",
+			"y": 90
+		},
+		"facing=north": {
+			"model": "mobitems:block/mob_enchanter"
+		},
+		"facing=south": {
+			"model": "mobitems:block/mob_enchanter",
+			"y": 180
+		},
+		"facing=west": {
+			"model": "mobitems:block/mob_enchanter",
+			"y": 270
+		}
+	}
+}

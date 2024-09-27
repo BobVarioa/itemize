@@ -1,0 +1,7 @@
+{
+	"type": "mobitems:mob_enchanting",
+	"catalyst": {
+		"item": "minecraft:golden_apple"
+	},
+	"enchantment": "mobitems:final_shout"
+}

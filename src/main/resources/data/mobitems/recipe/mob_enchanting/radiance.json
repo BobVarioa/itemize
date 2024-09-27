@@ -1,0 +1,7 @@
+{
+	"type": "mobitems:mob_enchanting",
+	"catalyst": {
+		"item": "minecraft:glistering_melon_slice"
+	},
+	"enchantment": "mobitems:radiance"
+}

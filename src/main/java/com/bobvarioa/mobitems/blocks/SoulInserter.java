@@ -1,5 +1,7 @@
 package com.bobvarioa.mobitems.blocks;
 
+import com.bobvarioa.mobitems.blocks.entities.SoulInserterEntity;
+import com.bobvarioa.mobitems.register.ModAttachments;
 import com.bobvarioa.mobitems.register.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
@@ -38,7 +40,7 @@ public class SoulInserter extends Block implements EntityBlock {
         if (!pNewState.isAir()) return;
         if (level.getBlockEntity(pos) instanceof SoulInserterEntity be) {
             NonNullList<ItemStack> list = NonNullList.create();
-            list.add(be.itemHandlerCache.getCapability().getStackInSlot(0));
+            list.add(be.getData(ModAttachments.SOUL_INSERTER.get()).getStackInSlot(0));
             Containers.dropContents(level, pos, list);
         }
 

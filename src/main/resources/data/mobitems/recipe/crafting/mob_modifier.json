@@ -1,0 +1,29 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"key": {
+		"B": {
+			"item": "minecraft:stone_bricks"
+		},
+		"S": {
+			"item": "minecraft:smooth_stone"
+		},
+		"M": {
+			"item": "mobitems:mob_soul"
+		},
+		"I": {
+			"item": "minecraft:iron_block"
+		},
+		"C": {
+			"item": "minecraft:crafting_table"
+		}
+	},
+	"pattern": [
+		"MCM",
+		"BIB",
+		"SSS"
+	],
+	"result": {
+		"count": 1,
+		"id": "mobitems:mob_modifier"
+	}
+}

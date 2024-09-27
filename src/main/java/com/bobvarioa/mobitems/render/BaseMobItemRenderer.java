@@ -1,6 +1,7 @@
 package com.bobvarioa.mobitems.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.math.Axis;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderDispatcher;
@@ -21,11 +22,13 @@ import java.util.Map;
 import java.util.Optional;
 
 public class BaseMobItemRenderer {
-    public static final Map<String, ScaleAndTransOverrides> mobOverrides = new HashMap<>();
+	public static final Map<String, ScaleAndTransOverrides> mobOverrides = new HashMap<>();
+	public static final Map<String, BBOverride> mobBBOverrides = new HashMap<>();
     public static boolean isInMobItemRenderer = false;
+	
+	record BBOverride(double scale) { }
 
-    record ScaleAndTransOverrides(float scale, float x, float y, float z) {
-    }
+    record ScaleAndTransOverrides(float scale, float x, float y, float z) { }
 
     static {
         mobOverrides.put("minecraft:squid", new ScaleAndTransOverrides(-0.2f, 0f, 0.4f, 0f));
@@ -35,15 +38,9 @@ public class BaseMobItemRenderer {
         mobOverrides.put("minecraft:hoglin", new ScaleAndTransOverrides(-0.2f, 0f, 0f, 0f));
         mobOverrides.put("minecraft:shulker", new ScaleAndTransOverrides(-0.2f, 0f, 0f, 0f));
         mobOverrides.put("minecraft:bat", new ScaleAndTransOverrides(0.1f, 0f, 0f, 0f));
-//        mobOverrides.put("minecraft:ender_dragon", new ScaleAndTransOverrides(-0.1f, 0f, 0.4f, 0f));
-    }
+        mobOverrides.put("minecraft:ender_dragon", new ScaleAndTransOverrides(0.0f, 0f, 0.4f, 0f));
 
-
-    public static final Vector3f XP = new Vector3f(1.0F, 0.0F, 0.0F);
-    public static final Vector3f YP = new Vector3f(0.0F, 1.0F, 0.0F);
-
-    public static Quaternionf rotationDegrees(Vector3f vec, float degrees) {
-        return new Quaternionf().set(new AxisAngle4f(((float) Math.toRadians(degrees)), vec));
+		mobBBOverrides.put("minecraft:ender_dragon", new BBOverride(7.0D));
     }
 
     public static void render(CompoundTag tag, float rotationDegrees, ItemDisplayContext displayContext, PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay) {
@@ -102,31 +99,63 @@ public class BaseMobItemRenderer {
 
         float entityScale = 0.85F;
 
-        double scaleDivisor = Math.max(mob.getBbWidth(), mob.getBbHeight());
+        double scaleDivisor = mobBBOverrides.containsKey(id) ? mobBBOverrides.get(id).scale : Math.max(mob.getBbWidth(), mob.getBbHeight());
         if (scaleDivisor > 1.0D) {
             entityScale /= scaleDivisor;
         }
 
+		var override = mobOverrides.get(id);
         poseStack.translate(0.5F, 0.05F, 0.5F);
-        if (displayContext.equals(ItemDisplayContext.GUI)) {
-            poseStack.mulPose(rotationDegrees(XP, 15));
-            poseStack.mulPose(rotationDegrees(YP, 45));
-        }
-        if (displayContext.equals(ItemDisplayContext.FIXED)) {
-            entityScale += 0.2f;
-            poseStack.translate(0F, -0.2F, 0.1F);
-        }
-        if (displayContext.equals(ItemDisplayContext.THIRD_PERSON_LEFT_HAND) || displayContext.equals(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND)) {
-            poseStack.mulPose(rotationDegrees(YP, 180));
-        }
-        poseStack.mulPose(rotationDegrees(YP, Mth.wrapDegrees(rotationDegrees)));
+		switch (displayContext) {
+			case GUI ->  {
+				poseStack.mulPose(Axis.XP.rotationDegrees(15));
+				poseStack.mulPose(Axis.YP.rotationDegrees(45));
+			}
+			
+			case GROUND -> {
+				poseStack.translate(0F, 0.2F, 0F);
+				
+			}
+			
+			case FIXED -> {
+				entityScale += 0.2f;
+				poseStack.mulPose(Axis.YP.rotationDegrees(180));
+				poseStack.translate(0F, -0.2F, 0.1F);
+			}
+			
+			case THIRD_PERSON_LEFT_HAND, THIRD_PERSON_RIGHT_HAND -> {
+				entityScale /= 2;
+				poseStack.translate(0f, 0.45f, 0f);
+				poseStack.mulPose(Axis.YP.rotationDegrees(180));
+				override = null;
+			}
+			
+			case FIRST_PERSON_LEFT_HAND, FIRST_PERSON_RIGHT_HAND -> {
+				poseStack.mulPose(Axis.YP.rotationDegrees(180));
+				if (mob.getBbHeight() > 1.0D) {
+					poseStack.translate(0f, 0.15f, 0f);
+					
+				}
+				override = null;
+			}
+			
+			case HEAD -> {
+				entityScale += 0.1f;
+				poseStack.translate(0f, 0.7f, 0f);
+				poseStack.mulPose(Axis.YP.rotationDegrees(180));
+				override = null;
+			}
+			
+			default -> {}
+		}
+        poseStack.mulPose(Axis.YP.rotationDegrees(Mth.wrapDegrees(rotationDegrees)));
 
-        var override = mobOverrides.get(id);
-        if (override != null) {
-            entityScale += override.scale;
-            poseStack.translate(override.x, override.y, override.z);
-        }
-        poseStack.scale(entityScale, entityScale, entityScale);
+		if (override != null) {
+			entityScale += override.scale;
+			poseStack.translate(override.x, override.y, override.z);
+		}
+		poseStack.scale(entityScale, entityScale, entityScale);
+
 
         EntityRenderDispatcher rendererManager = mc.getEntityRenderDispatcher();
         rendererManager.setRenderShadow(false);

@@ -1,0 +1,7 @@
+{
+	"type": "mobitems:mob_enchanting",
+	"catalyst": {
+		"item": "minecraft:wind_charge"
+	},
+	"enchantment": "mobitems:knockback"
+}

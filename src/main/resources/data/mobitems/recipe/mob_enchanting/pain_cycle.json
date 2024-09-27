@@ -1,0 +1,7 @@
+{
+	"type": "mobitems:mob_enchanting",
+	"catalyst": {
+		"item": "minecraft:coal_block"
+	},
+	"enchantment": "mobitems:pain_cycle"
+}

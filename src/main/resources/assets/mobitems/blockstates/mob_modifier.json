@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=east": {
+			"model": "mobitems:block/mob_modifier",
+			"y": 90
+		},
+		"facing=north": {
+			"model": "mobitems:block/mob_modifier"
+		},
+		"facing=south": {
+			"model": "mobitems:block/mob_modifier",
+			"y": 180
+		},
+		"facing=west": {
+			"model": "mobitems:block/mob_modifier",
+			"y": 270
+		}
+	}
+}

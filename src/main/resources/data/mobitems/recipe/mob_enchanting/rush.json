@@ -1,0 +1,7 @@
+{
+	"type": "mobitems:mob_enchanting",
+	"catalyst": {
+		"item": "minecraft:blaze_powder"
+	},
+	"enchantment": "mobitems:rush"
+}

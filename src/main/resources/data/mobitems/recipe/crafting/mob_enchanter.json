@@ -1,0 +1,26 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"key": {
+		"L": {
+			"tag": "minecraft:logs"
+		},
+		"G": {
+			"item": "minecraft:gold_block"
+		},
+		"P": {
+			"item": "minecraft:purple_carpet"
+		},
+		"M": {
+			"item": "mobitems:mob_soul"
+		}
+	},
+	"pattern": [
+		"PMP",
+		"LGL",
+		"L L"
+	],
+	"result": {
+		"count": 1,
+		"id": "mobitems:mob_enchanter"
+	}
+}

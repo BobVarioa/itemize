@@ -1,0 +1,12 @@
+{
+	"parent": "minecraft:block/cube",
+	"textures": {
+		"down": "mobitems:block/machine_bottom",
+		"east": "mobitems:block/machine_side",
+		"north": "mobitems:block/machine_side",
+		"particle": "mobitems:block/machine_side",
+		"south": "mobitems:block/machine_side",
+		"up": "mobitems:block/mob_modifier_top",
+		"west": "mobitems:block/machine_side"
+	}
+}

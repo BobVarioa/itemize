@@ -1,0 +1,7 @@
+{
+	"type": "mobitems:mob_enchanting",
+	"catalyst": {
+		"item": "minecraft:turtle_scute"
+	},
+	"enchantment": "mobitems:deflect"
+}

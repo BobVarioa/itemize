@@ -1,0 +1,7 @@
+{
+	"type": "mobitems:mob_enchanting",
+	"catalyst": {
+		"item": "minecraft:shield"
+	},
+	"enchantment": "mobitems:guarding_strike"
+}

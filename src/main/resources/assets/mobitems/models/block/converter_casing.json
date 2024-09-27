@@ -2,11 +2,11 @@
   "parent": "minecraft:block/cube",
   "textures": {
     "down": "mobitems:block/converter_bottom_empty",
-    "east": "mobitems:block/converter_side",
-    "north": "mobitems:block/converter_side",
-    "particle": "mobitems:block/converter_side",
-    "south": "mobitems:block/converter_side",
+    "east": "mobitems:block/machine_side",
+    "north": "mobitems:block/machine_side",
+    "particle": "mobitems:block/machine_side",
+    "south": "mobitems:block/machine_side",
     "up": "mobitems:block/converter_top_empty",
-    "west": "mobitems:block/converter_side"
+    "west": "mobitems:block/machine_side"
   }
 }

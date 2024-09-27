@@ -1,0 +1,7 @@
+{
+	"type": "mobitems:mob_enchanting",
+	"catalyst": {
+		"item": "minecraft:echo_shard"
+	},
+	"enchantment": "mobitems:enigma_resonator"
+}

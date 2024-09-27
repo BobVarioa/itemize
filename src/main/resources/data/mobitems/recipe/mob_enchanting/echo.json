@@ -1,0 +1,7 @@
+{
+	"type": "mobitems:mob_enchanting",
+	"catalyst": {
+		"item": "minecraft:amethyst_block"
+	},
+	"enchantment": "mobitems:echo"
+}

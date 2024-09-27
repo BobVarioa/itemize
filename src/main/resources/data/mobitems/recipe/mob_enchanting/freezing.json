@@ -1,0 +1,7 @@
+{
+	"type": "mobitems:mob_enchanting",
+	"catalyst": {
+		"item": "minecraft:powder_snow_bucket"
+	},
+	"enchantment": "mobitems:freezing"
+}

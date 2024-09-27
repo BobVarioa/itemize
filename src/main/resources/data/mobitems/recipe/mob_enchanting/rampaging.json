@@ -1,0 +1,7 @@
+{
+	"type": "mobitems:mob_enchanting",
+	"catalyst": {
+		"item": "minecraft:fire_charge"
+	},
+	"enchantment": "mobitems:rampaging"
+}

@@ -1,0 +1,7 @@
+{
+	"type": "mobitems:mob_enchanting",
+	"catalyst": {
+		"item": "minecraft:spider_eye"
+	},
+	"enchantment": "mobitems:poison_cloud"
+}

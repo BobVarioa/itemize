@@ -1,10 +1,9 @@
 package com.bobvarioa.mobitems.render;
 
 import com.bobvarioa.mobitems.MobItems;
-import com.bobvarioa.mobitems.blocks.MobBlockEntity;
+import com.bobvarioa.mobitems.blocks.entities.MobBlockEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.neoforged.api.distmarker.Dist;

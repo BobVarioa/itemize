@@ -1,0 +1,29 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"key": {
+		"B": {
+			"item": "minecraft:bone"
+		},
+		"F": {
+			"item": "minecraft:rotten_flesh"
+		},
+		"E": {
+			"item": "minecraft:spider_eye"
+		},
+		"S": {
+			"item": "mobitems:mob_soul"
+		},
+		"U": {
+			"item": "minecraft:bowl"
+		}
+	},
+	"pattern": [
+		" B ",
+		"FSE",
+		" U "
+	],
+	"result": {
+		"count": 1,
+		"id": "mobitems:worm_food"
+	}
+}

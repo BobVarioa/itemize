@@ -1,0 +1,23 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"key": {
+		"B": {
+			"item": "minecraft:stone_button"
+		},
+		"Y": {
+			"item": "minecraft:yellow_concrete"
+		},
+		"P": {
+			"item": "minecraft:piston"
+		}
+	},
+	"pattern": [
+		"B",
+		"Y",
+		"P"
+	],
+	"result": {
+		"count": 1,
+		"id": "mobitems:vacuum"
+	}
+}

@@ -1,8 +1,10 @@
 package com.bobvarioa.mobitems.items;
 
-import com.bobvarioa.mobitems.blocks.MobBlockEntity;
-import com.bobvarioa.mobitems.entity.EntityUtils;
+import com.bobvarioa.mobitems.MobItems;
+import com.bobvarioa.mobitems.blocks.entities.MobBlockEntity;
+import com.bobvarioa.mobitems.helpers.EntityUtils;
 import com.bobvarioa.mobitems.register.ModBlocks;
+import com.bobvarioa.mobitems.register.ModDataComponents;
 import com.bobvarioa.mobitems.register.ModItems;
 import com.bobvarioa.mobitems.render.MobItemRenderer;
 import net.minecraft.client.Minecraft;
@@ -87,17 +89,38 @@ public class MobItem extends Item {
         return Component.translatable("entity." + id.toLanguageKey());
     }
 
+	@Override
+	public boolean isFoil(ItemStack stack) {
+		return stack.has(ModDataComponents.MOB_ENCHANTMENTS.get());
+	}
 
-    private final NumberFormat formatter = new DecimalFormat("#.##");
+	private final NumberFormat formatter = new DecimalFormat("#.##");
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
         var nbt = getEntityData(stack);
+		
         if (!nbt.isEmpty()) {
-            var health = nbt.getFloat("Health");
+			float health = nbt.getFloat("Health");
+			float soul = nbt.getFloat(EntityUtils.SOUL_KEY);
+			float usedSoul = nbt.getFloat(EntityUtils.USED_SOUL_KEY);
 
             tooltipComponents.add(Component.literal("Health: " + formatter.format(health)));
+			if (soul != 0.0f) {
+				tooltipComponents.add(Component.literal("Soul: " + formatter.format(soul)));
+			}
+			if (usedSoul != 0.0f) {
+				tooltipComponents.add(Component.literal("Used soul: " + formatter.format(usedSoul)));
+			}
+			
+			var enchants = stack.get(ModDataComponents.MOB_ENCHANTMENTS.get());
+			if (enchants == null) return;
+			
+			tooltipComponents.add(Component.empty());
+			for (var enchant : enchants.toList()) {
+				tooltipComponents.add(Component.translatable(enchant.id().toLanguageKey("tooltip.mob_enchantment")));
+			}
         }
     }
 
@@ -181,10 +204,6 @@ public class MobItem extends Item {
                             !Objects.equals(blockpos, blockposCollision) && direction == Direction.UP
                     );
                     if (entity != null) {
-                        if (entity instanceof LivingEntity le) {
-                            EntityUtils.applySoulEffects(le);
-                        }
-
                         item.shrink(1);
                         level.gameEvent(pContext.getPlayer(), GameEvent.ENTITY_PLACE, blockpos);
                     }
@@ -204,4 +223,6 @@ public class MobItem extends Item {
             }
         });
     }
+	
+	
 }

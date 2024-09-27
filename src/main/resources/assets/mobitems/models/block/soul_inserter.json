@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "down": "mobitems:block/soul_inserter_bottom",
-    "east": "mobitems:block/soul_inserter_side",
-    "north": "mobitems:block/soul_inserter_side",
-    "particle": "mobitems:block/soul_inserter_side",
-    "south": "mobitems:block/soul_inserter_side",
+    "down": "mobitems:block/machine_bottom",
+    "east": "mobitems:block/machine_side",
+    "north": "mobitems:block/machine_side",
+    "particle": "mobitems:block/machine_side",
+    "south": "mobitems:block/machine_side",
     "up": "mobitems:block/soul_inserter_top",
-    "west": "mobitems:block/soul_inserter_side"
+    "west": "mobitems:block/machine_side"
   }
 }

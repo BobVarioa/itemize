@@ -1,0 +1,25 @@
+{
+	"variants": {
+		"facing=up": {
+			"model": "minecraft:missingno"
+		},
+		"facing=down": {
+			"model": "minecraft:missingno"
+		},
+		"facing=east": {
+			"model": "mobitems:block/mob_colosseum",
+			"y": 90
+		},
+		"facing=north": {
+			"model": "mobitems:block/mob_colosseum"
+		},
+		"facing=south": {
+			"model": "mobitems:block/mob_colosseum",
+			"y": 180
+		},
+		"facing=west": {
+			"model": "mobitems:block/mob_colosseum",
+			"y": 270
+		}
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"type": "mobitems:mob_enchanting",
+	"catalyst": {
+		"item": "minecraft:blaze_rod"
+	},
+	"enchantment": "mobitems:fire_aspect"
+}

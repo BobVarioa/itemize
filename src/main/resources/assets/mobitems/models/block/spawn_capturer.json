@@ -2,11 +2,11 @@
   "parent": "minecraft:block/cube",
   "textures": {
     "down": "mobitems:block/spawn_capturer_bottom",
-    "east": "mobitems:block/spawn_capturer_side",
-    "north": "mobitems:block/spawn_capturer_side",
-    "particle": "mobitems:block/spawn_capturer_side",
-    "south": "mobitems:block/spawn_capturer_side",
+    "east": "mobitems:block/machine_side",
+    "north": "mobitems:block/machine_side",
+    "particle": "mobitems:block/machine_side",
+    "south": "mobitems:block/machine_side",
     "up": "mobitems:block/spawn_capturer_top",
-    "west": "mobitems:block/spawn_capturer_side"
+    "west": "mobitems:block/machine_side"
   }
 }

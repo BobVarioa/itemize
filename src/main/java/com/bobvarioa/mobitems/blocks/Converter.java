@@ -1,10 +1,10 @@
 package com.bobvarioa.mobitems.blocks;
 
+import com.bobvarioa.mobitems.blocks.entities.ConverterEntity;
 import com.bobvarioa.mobitems.register.ModBlockEntities;
 import com.bobvarioa.mobitems.register.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -79,8 +79,8 @@ public class Converter extends Block implements EntityBlock {
             if (item.is(Items.NETHER_STAR)) {
                 if (!player.isCreative()) item.shrink(1);
                 level.setBlock(pos, ModBlocks.SPAWN_CAPTURER.get().defaultBlockState(), 2);
+            	return ItemInteractionResult.CONSUME;
             }
-            return ItemInteractionResult.CONSUME;
         }
 
         return super.useItemOn(stack, state, level, pos, player, hand, hitResult);
